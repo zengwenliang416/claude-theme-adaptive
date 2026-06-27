@@ -11,7 +11,6 @@
     "./commands/list.md",
     "./commands/configure.md"
   ],
-  "hooks": "./hooks/hooks.json",
   "homepage": "https://github.com/zengwenliang416/claude-theme-adaptive",
   "repository": "https://github.com/zengwenliang416/claude-theme-adaptive",
   "license": "MIT",
