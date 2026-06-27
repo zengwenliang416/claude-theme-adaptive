@@ -1,0 +1,26 @@
+{
+  "name": "claude-theme-adaptive",
+  "owner": {
+    "name": "Wenliang Zeng"
+  },
+  "metadata": {
+    "description": "Describe what you want your terminal to look like, and Claude picks the best theme. 15 curated themes across Classic, Cyberpunk, Natural, and Minimal categories.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "claude-theme-adaptive",
+      "source": "./",
+      "description": "Natural-language adaptive theme switching with 15 curated themes. Say what mood you want, get the right theme.",
+      "category": "productivity",
+      "tags": [
+        "theme",
+        "customization",
+        "ui",
+        "dark-mode",
+        "light-mode",
+        "adaptive"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "claude-theme-adaptive",
+  "description": "Natural-language theme switching for Claude Code with 15 curated themes across 4 categories",
+  "version": "1.0.0",
+  "author": {
+    "name": "Wenliang Zeng",
+    "url": "https://github.com/zengwenliang416"
+  },
+  "commands": [
+    "./commands/theme.md",
+    "./commands/list.md"
+  ],
+  "homepage": "https://github.com/zengwenliang416/claude-theme-adaptive",
+  "repository": "https://github.com/zengwenliang416/claude-theme-adaptive",
+  "license": "MIT",
+  "keywords": [
+    "theme",
+    "customization",
+    "dark-mode",
+    "light-mode",
+    "natural-language",
+    "claude-code",
+    "adaptive"
+  ]
+}
