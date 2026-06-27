@@ -80,6 +80,15 @@ bash "${PLUGIN_ROOT}scripts/apply-theme.sh" "<category>" "<slug>"
 Where `<category>` is one of: classic, cyberpunk, natural, minimal.
 And `<slug>` is the theme filename without .json extension.
 
+After applying, set the manual override flag so auto-switching does not overwrite the user's choice until next session:
+
+```bash
+CONFIG="${CLAUDE_CONFIG_DIR:-$HOME/.claude}/theme-adaptive.json"
+if [ -f "$CONFIG" ]; then
+  node -e "const fs=require('fs'),p=process.argv[1];try{const c=JSON.parse(fs.readFileSync(p,'utf8'));c.manualOverride=true;fs.writeFileSync(p,JSON.stringify(c,null,2)+'\n')}catch(e){}" "$CONFIG"
+fi
+```
+
 After success, tell the user in one sentence what was applied and suggest 1-2 alternatives from the same or adjacent category.
 
 ## Edge Cases

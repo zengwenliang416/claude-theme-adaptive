@@ -58,6 +58,63 @@ claude plugin add https://github.com/zengwenliang416/claude-theme-adaptive.git
 | **Amber Terminal** | Vintage CRT phosphor amber |
 | **Paper Light** | Light background for bright environments |
 
+## Auto Switching (Hooks)
+
+Configure automatic theme switching with:
+
+```
+/claude-theme-adaptive:configure
+```
+
+Three modes available:
+
+### Day/Night Mode
+
+Automatically switch between a day theme and night theme based on time of day.
+
+```json
+{
+  "mode": "daynight",
+  "daynight": {
+    "day": "paper-light",
+    "night": "nord",
+    "dayStart": 8,
+    "nightStart": 20
+  }
+}
+```
+
+### Per-Project Mode
+
+Assign different themes to different project directories. Theme switches when you change working directory.
+
+```json
+{
+  "mode": "project",
+  "projects": {
+    "/path/to/frontend": "neon-city",
+    "/path/to/backend": "gruvbox"
+  }
+}
+```
+
+### Random Mode
+
+Get a random theme each time you start a new Claude Code session.
+
+```json
+{
+  "mode": "random",
+  "random": {
+    "categories": ["classic", "natural"]
+  }
+}
+```
+
+### Manual Override
+
+When you manually switch a theme with `/claude-theme-adaptive:theme`, auto-switching pauses until your next session start.
+
 ## How it works
 
 The plugin uses Claude's language understanding to map your description to the best matching theme. It understands:
@@ -68,7 +125,7 @@ The plugin uses Claude's language understanding to map your description to the b
 - Context: night coding, eye strain, presentations, bright room
 - Chinese and English input
 
-No TypeScript engine or custom hooks — Claude itself is the intelligence layer.
+No TypeScript engine — Claude itself is the intelligence layer. Auto-switching uses lightweight hooks (`SessionStart`, `CwdChanged`) with a simple Node.js script.
 
 ## License
 
